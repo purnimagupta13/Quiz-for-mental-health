@@ -1,4 +1,12 @@
 /* script.js */
+function navigate(page) {
+    if (page === "home") {
+        window.location.href = "index.html"; 
+    } else if (page === "articles") {
+        window.location.href = "website/index.html";
+    }
+}
+
 const questions = [
   "I feel overwhelmed by my emotions.",
   "I am able to handle the level of stress I experience.",
@@ -52,4 +60,6 @@ if (container) {
     localStorage.setItem('score', totalScore);
     window.location.href = "results.html";
   });
+
+  
 }

@@ -26,7 +26,9 @@
         <li><strong>87–100</strong> — Flourishing</li>
       </ul>
     </div>
+    <button onclick="handleNavigation()">Next</button>
     <a href="index.html">Back to Home</a>
+
   </div>
   <script>
     const score = localStorage.getItem('score');
@@ -48,6 +50,17 @@
     } else {
       resultText.textContent = "You are flourishing. Great job taking care of your mental health!";
     }
+
+    function handleNavigation() {
+
+    if (score <= 43) {
+        window.location.href = "mainquiz.html"; 
+    }  else {
+        window.location.href = "thankyou.html";
+    }
+}
+
+
   </script>
 </body>
 </html>
