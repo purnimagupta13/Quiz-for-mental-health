@@ -1,0 +1,53 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Your Result</h2>
+    <p id="score-value"></p>
+    <div class="progress-container">
+  <div id="progress-bar" class="progress-bar"></div>
+</div>
+
+    <p id="result-text"></p>
+    <div class="score-range">
+      <h3>What do the scores mean?</h3>
+      <ul>
+        <li><strong>0–24</strong>   — Struggling</li>
+        <li><strong>25–43</strong> — Struggling somewhat</li>
+        <li><strong>44–68</strong> — Coping</li>
+        <li><strong>69–86</strong> — Coping well</li>
+        <li><strong>87–100</strong> — Flourishing</li>
+      </ul>
+    </div>
+    <a href="index.html">Back to Home</a>
+  </div>
+  <script>
+    const score = localStorage.getItem('score');
+    const scoreText = document.getElementById('score-value');
+    const resultText = document.getElementById('result-text');
+
+    scoreText.textContent = `Your Score: ${score}/100`;
+    document.getElementById('progress-bar').style.width = `${score}%`;
+
+
+    if (score < 25) {
+      resultText.textContent = "You are struggling. It may be helpful to seek support or speak to a mental health professional.";
+    } else if (score <= 43 && score >= 25) {
+      resultText.textContent = "You are struggling somewhat. Consider strategies to improve your mental wellness.";
+    } else if (score <= 68 && score > 43) {
+      resultText.textContent = "You are coping. You're doing okay, but check in with yourself regularly.";
+    } else if (score <= 86 && score > 68) {
+      resultText.textContent = "You are coping well. Keep maintaining your mental well-being!";
+    } else {
+      resultText.textContent = "You are flourishing. Great job taking care of your mental health!";
+    }
+  </script>
+</body>
+</html>
