@@ -8,12 +8,12 @@ body {
 }
 .container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 50px ;
   background: rgb(176, 199, 239);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 h1, h2 {
   text-align: center;
